@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Имя: {{ student.name }}</h4>
+          <h4 class="card-title">Фамилия: {{ student.surname }}</h4>
+          <p class="card-text">Факультет: {{ item.faculty }}</p>
+          <p class="card-text">Специальность: {{ student.specialization }}</p>
+          <p class="card-text">Курс: {{ student.course }}</p>
+          <p class="card-text">Время входа: {{ student.last_login }}</p>
+        </div>
+      </div>
+{% endblock %}
