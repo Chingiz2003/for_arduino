@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- <h2>Student Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form> -->
+    <!-- main/login.html -->
+    <body class="login-page">
+        <div class="login-container">
+            <h1>Вход</h1>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="pincode">Пин-код:</label>
+                    {{ form.pincode }}
+                    {% if form.errors.pincode %}
+                        <p class="error-message">{{ form.errors.pincode }}</p>
+                    {% endif %}
+                </div>
+                <button class="submit-button" type="submit">Войти</button>
+            </form>
+  
+
+{% endblock %}
